@@ -17,9 +17,18 @@ public class Theory {
         Theory obj = new Theory();
         System.out.println(obj.x);
         obj.x = 100; // Change will be done only inside RAM not HDD. DOUBT
+        // In Java, a single object can be referenced by multiple reference
+        // variables simultaneously, but at a time one reference variable can refer to
+        // only one object. DOUBT Page 7 Day 3
         System.out.println(obj.x);
         System.out.println("-----------------");
         Theory obj1 = new Theory();
         System.out.println(obj1.x);
+        System.out.println("------------------");
+        Theory obj2 = obj1;
+        System.out.println(obj2.x);
+        obj2 = null; // Garbage collector will destroy obj2
+        // System.out.println(obj2.x); // NullPointerException
+
     }
 }
