@@ -86,6 +86,9 @@ public class WE {
         System.out.println(val10);
         // Java Statements
         // Conditionals Statements
+
+
+
         // Day 2 : Page 16
         // Doubt
         int val11 = 10;
@@ -96,6 +99,9 @@ public class WE {
             val12 = 30; //Doubt
         }
         System.out.println(val12);
+
+
+
         // Switch Case
         int val13 = 10;
         switch(val13){
