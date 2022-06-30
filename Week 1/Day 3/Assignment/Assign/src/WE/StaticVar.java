@@ -1,3 +1,5 @@
+package WE;
+
 public class StaticVar {
     static int i = 10;
     public static void func1(){

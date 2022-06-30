@@ -1,3 +1,5 @@
+package WE;
+
 public class WE {
     // Static
     static String bankName;

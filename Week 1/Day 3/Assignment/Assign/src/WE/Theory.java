@@ -1,3 +1,5 @@
+package WE;
+
 public class Theory {
     // Class is a template for the Objects.
     // Class is virtual encapsulation of properties and behaviours.

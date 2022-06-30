@@ -1,3 +1,5 @@
+package WE;
+
 public class Encapsulation {
     String artist;
     String title;
@@ -7,7 +9,7 @@ public class Encapsulation {
     public static void main(String[] args) {
         // State & Behaviour Of Object DOUBT
 
-        // Encapsulation: This is the basic principle of object-oriented programming, according to this
+        // WE.Encapsulation: This is the basic principle of object-oriented programming, according to this
         // principle, we bundle the data and methods, that operate on that data in a single
         // unit. DOUBT
 
