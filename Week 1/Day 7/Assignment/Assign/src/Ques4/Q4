@@ -1,0 +1,4 @@
+Why is multiple inheritance not supported in java at class level ?
+
+Because, if methods and variable having same name are declared in both parent class then there will be conflict in child class.
+That which method or variable to be executed in child class. Multiple inheritance can be implemented using interfaces.
