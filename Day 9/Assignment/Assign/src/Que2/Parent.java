@@ -1,19 +1,12 @@
 package Que2;
 
-public class Parent {
-
-    public Parent(int number) {
-        this.number = number;
-    }
-
-    void method1(){
-        System.out.println("Parent Class... Method1... ");
-    }
-    void method2(){
-        System.out.println("Parent Class... Method2... ");
+public abstract class Parent {
+    final int number = 10;
+    abstract void method1();
+    final void method2(){
+        System.out.println("Class Prent... final void method2()... ");
     }
     void method3(){
-        System.out.println("Parent Class... Method1... ");
+        System.out.println("Class Parent... void method3()... ");
     }
-    final int number;
 }
