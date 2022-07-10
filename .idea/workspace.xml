@@ -2,36 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2990ff42-4c5d-4dec-a762-a69c49555b3c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Day 10/Assignment/Assign/src/Que1/AllStudent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 10/Assignment/Assign/src/Que1/HistoryStudent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 10/Assignment/Assign/src/Que1/ScienceStudent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 10/Assignment/Assign/src/Que1/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 10/Assignment/Assign/src/Que2/Area.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 10/Assignment/Assign/src/Que2/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 10/Assignment/Assign/src/Que2/Shape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 8/Assignment/Assign/src/Que1/Bird.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 8/Assignment/Assign/src/Que1/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 8/Assignment/Assign/src/Que1/Parrot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 8/Assignment/Assign/src/Que2/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 8/Assignment/Assign/src/Que2/Poly.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 8/Assignment/Assign/src/Que3/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 8/Assignment/Assign/src/Que3/Cat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 8/Assignment/Assign/src/Que3/Dog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 8/Assignment/Assign/src/Que3/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 8/Assignment/Assign/src/Que3/Tiger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 8/Assignment/Assign/src/Que4/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 8/Assignment/Assign/src/Que4/Parent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 9/Assignment/Assign/src/Que1/Demo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 9/Assignment/Assign/src/Que1/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 9/Assignment/Assign/src/Que2/Child.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 9/Assignment/Assign/src/Que2/Parent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 9/Assignment/Assign/src/Que3/Address.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 9/Assignment/Assign/src/Que3/Instructor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 9/Assignment/Assign/src/Que3/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 9/Assignment/Assign/src/Que3/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day 9/Assignment/Assign/src/Que3/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day 9/WE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Day 9/WE/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day 10/Assignment/Assign/src/Que2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Day 10/Assignment/Assign/src/Que2/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,13 +21,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/lalit/OneDrive/Desktop/JA111"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lalit/OneDrive/Desktop/JA111&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

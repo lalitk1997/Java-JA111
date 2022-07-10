@@ -13,6 +13,6 @@ public class Area extends Shape{
 
     @Override
     public int circleArea(int radius) {
-        return (int)(2*3.14*radius);
+        return (int)(radius*3.14*radius);
     }
 }
