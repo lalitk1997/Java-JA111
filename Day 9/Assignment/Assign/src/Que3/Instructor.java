@@ -9,6 +9,6 @@ public class Instructor extends Person{
         return "Instructor{" +
                 "instructorId=" + instructorId +
                 ", salary=" + salary +
-                '}';
+                '}'+super.toString();
     }
 }

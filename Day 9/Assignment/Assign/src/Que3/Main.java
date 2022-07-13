@@ -20,6 +20,7 @@ public class Main {
 //            String pincode = input.next();
 //            System.out.println("Enter Instructor State : ");
 //            String state = input.next();
+            System.out.println(" Lalit's to string  "+  objI);
             return objI;
         }else{
             Student objS = (Student) person;
@@ -44,3 +45,19 @@ public class Main {
         System.out.println(newStudent);
     }
 }
+
+class P{
+    final int i;
+
+    public P(int n){
+       i=n;
+    }
+
+}
+
+class C extends P{
+    public C(int i){
+        super(i);
+    }
+}
+

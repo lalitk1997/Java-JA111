@@ -11,6 +11,7 @@ public class Student extends Person{
                 "studentId=" + studentId +
                 ", courseEnrolled='" + courseEnrolled + '\'' +
                 ", courseFee=" + courseFee +
-                '}';
+                '}'
+                + super.toString();
     }
 }
