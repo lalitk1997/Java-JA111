@@ -1,0 +1,4 @@
+Markup Interface is an interface which has no methods or data members in it.
+At runtime it provides additional information about the object of Class implementing markup interface.
+It is also known as tagging Interface.
+Ex : Clonable etc
