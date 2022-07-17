@@ -1,0 +1,15 @@
+Abstract Class :
+1. Abstract class can have unimplemented function (abstract func) as well as implemented func.
+2. A class must be declared abstract class, if all inherited abstract methods are not implemented.
+3. Abstract Class represents partial abstraction.
+4. Abstract Class cannot inherit multiple abstract class.
+5. Abstracts Class extends another Abstracts Class.
+6. Multiple Inheritance not possible.
+
+Interface
+1. Interface contains only unimplemented methods. From java 1.8, we can include default and static methods.
+2. In implemented class all unimplemented methods must be overridden.
+3. Interface represents full abstraction.
+4. Interface can extends multiple interfaces.
+5. Classes implements interfaces, and interfaces extends other interfaces.
+6. Multiple Inheritance is possible.
