@@ -1,6 +1,4 @@
-package ex1;
-
-import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
+package regularexp;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
