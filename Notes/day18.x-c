@@ -1,0 +1,451 @@
+Autoboxing and Autounboxing:
+=========================
+
+boxing : converting primitives into the object(box) reverse is called as unboxing.
+
+8 primitives data types
+
+for each primitives data types we have corresponding wrapper classes are there.
+
+int ----> Integer
+byte--->Byte
+char ---> Character
+float ---> Float
+
+
+int i = 10;
+
+Integer i1 = new Integer(i);   //boxing
+or
+Integer i1 = Integer.valueOf(i);
+
+int x= i2.intValue(); //unboxing
+
+
+from java 1.5 onwards autoboxing and autounboxing:
+
+
+int i = 10;
+		
+Integer i1 = i; //auto boxing
+
+int x = i1;//auto unboxing
+
+	
+Demo.java:
+--------------
+
+package com.masai;
+
+import java.util.ArrayList;
+
+public class Demo {
+
+	public static void main(String[] args) {
+	
+		
+		ArrayList al = new ArrayList();
+		
+		System.out.println(al.size());
+		
+		al.add("one");
+		al.add("two");
+		al.add("three");
+		al.add(new A());
+		al.add(new Student(10, "Ram", 780));
+		al.add(null);
+		al.add(null);
+		al.add("one");
+			
+		System.out.println(al.size()); // 8
+		System.out.println(al);
+// output: [one, two, three, com.masai.A@123a439b, com.masai.Student@7de26db8, null, null, one]
+		
+	}
+
+}
+
+
+
+Autoboxing and Unboxing:
+=====================
+
+--in java we have total 8 primitive datatypes are there , and for each data types we have corresponding 
+wrapper classes are there . 
+
+--these wrapper classes belongs to java.lang package.
+
+int ---> Integer
+byte - Byte
+
+int x =10;
+
+--before java 1.5 inorder to add the primitives in collection we need to wrap the primitives to their corresponding wrapper class object.
+
+		int i =10;
+		Integer i1 = Integer.valueOf(i);  // boxing 
+		
+		int x= i1.intValue(); //unboxing
+		
+
+from java 1.5 onwards we have a concept called autboxing and autounboxing:
+
+		int i =10;
+		Integer i1 = i; //auto-boxing
+		
+		int x= i1; //auto-unboxing
+
+
+example:
+
+
+		ArrayList al = new ArrayList();
+		
+		System.out.println(al.size());
+		
+		al.add("one");
+		al.add("two");
+		al.add("three");
+		al.add(new A());
+		al.add(new Student(10, "Ram", 780));
+		al.add(null);
+		al.add(null);
+		al.add("one");  // String
+		al.add(10);  // Integer   
+		al.add(true);  // Boolean
+		al.add(10.55); // Double
+		
+		
+		
+		System.out.println(al.size());
+		System.out.println(al);
+	
+		
+---in the above example our AL class is a type unsafe collection, we can add any type of object, so while getting the object from the AL we need to know at which index what obj is added so that we can downcast and get back our object.
+
+Note: in realtime application we should not create collection class obj as type unsafe collection, we should always create type-safe collection by using "Generics" feature of java.
+
+ 		
+ex:
+
+ArrayList<String> al = new ArrayList<>(); 
+
+here this AL is a type-safe AL and it will allow only String object.
+
+Note: if we create type-safe collection class obj by usin Generics concept, we will get 2 adv:
+
+1. we can not add other than specified object, while getting the object from collection we need not worry about type of the element.
+
+2.we get rid of downcasting problem
+
+example:
+
+	
+		ArrayList<String> al = new ArrayList<>();
+		
+		al.add("one");
+		al.add("two");
+		al.add("three");
+		al.add("one");  // String
+		al.add("four");
+			
+		String s= al.get(2);
+		
+		System.out.println(s);
+	
+//before generics
+class ArrayList implements List
+{
+
+ public boolean add(Object obj){
+    //add the obj to the AL object
+ }
+
+ public Object get(int index){
+	//return the object at the specified index	
+ }
+
+//remaining methods 
+
+
+}
+
+
+//after generic from java 1.5 v
+class ArrayList<T> implements List
+{
+
+ public boolean add(T t){
+    //add the t obj to the AL object
+ }
+
+ public T get(int index){
+	//return the object at the specified index	
+ }
+
+//remaining methods 
+
+}
+
+
+example:
+
+Demo.java:
+============
+
+package com.masai;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Demo {
+
+	public static void main(String[] args)   {
+
+	
+		Scanner sc = new Scanner(System.in);
+	
+		ArrayList<Student> students = new ArrayList<>();
+		
+		int count =1;
+		
+		while(true) {
+			
+			System.out.println("Enter Details of Student "+(count++));
+			
+			System.out.println("Enter Roll");
+			int roll= sc.nextInt();
+			
+			System.out.println("Enter Name");
+			String name= sc.next();
+			
+			System.out.println("Enter Marks");
+			int marks= sc.nextInt();
+			
+			Student student = new Student(roll, name, marks);
+			students.add(student);
+			
+			System.out.println("Want more (y/n) ?");
+			String choice= sc.next();
+			
+			if(choice.equalsIgnoreCase("n"))
+				break;
+			
+		}
+		
+		System.out.println("Student Details are :");
+		System.out.println("=======================");
+		
+		for(Student student:students) {
+			
+			System.out.println("Roll is :"+student.getRoll());
+			System.out.println("Name is :"+student.getName());
+			System.out.println("Marks is :"+student.getMarks());
+			
+			System.out.println("***********************************");
+		}
+		
+	}
+
+}
+
+
+LinkedList:-  it is the best choice if our frequent operation is insertion or deletion in middle.
+
+from java 1.5 onwards LinkedList class also implements Deque interface
+
+exmaple:
+
+LinkedList<Integer> al = new LinkedList<>();
+		
+		al.add(10);
+		al.add(20);
+		al.add(30);
+		al.add(40);
+		al.add(50);
+		al.add(60);
+		
+		
+		int x= al.get(1);
+			
+		System.out.println(x);
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		ArrayList<Integer> al = new ArrayList<>(); //too specific
+		
+		
+		List<Integer> list =new ArrayList<>();  // most recomended 
+		
+		Collection<Integer> col =new ArrayList<>();
+		
+		Object obj = new ArrayList<>(); //too generic
+
+
+Set:
+====
+
+--it defines the behaviour of a collection that it does not allows duplicate element.
+
+boolean add(E);
+
+--it does not define any additional methods of its own, (all methods r inherited from the Collection interface)
+
+--index in not applicable in Set.
+
+--so we can not get the values based on index. it does not have get(int index)
+
+--to access the element from the Set we can not use index concept.(we use enhanced for loop, iterator, forEach())
+
+
+HashSet:
+-----------
+
+--it is the implementation of Set interface
+
+--it internally uses hashing technique to store the value (hashing time complexity is O(1))
+
+--it is the best choice if our frequent operation is searching.
+
+--duplicate not allowed.
+
+--null insertion is possible (only one)
+
+HashSet hs = new HashSet();
+
+--here empty HashSet obj is created with default intial capacity 16 and  default load factor 0.75.
+
+--load factor means after  completion of 75 % of the HashSet and new HashSet object will be created internaly.
+
+HashSet<Integer> hs = new HashSet<>(1000,0.8f);
+		
+initial capacity is 1000 and load factor will be 80%
+
+HS does not preserve the sequence.
+
+	HashSet<Integer> hs = new HashSet<>();
+		
+		hs.add(10);
+		hs.add(20);
+		hs.add(10);
+		hs.add(10);
+		hs.add(10);
+		hs.add(null);
+		hs.add(null);
+
+		
+		System.out.println(hs.size()); //3
+		System.out.println(hs); // [null, 20, 10]
+
+
+Note: all the Collection f/w related classes are mutually inclusive. i.e we can convert any collection class to any other collection class very easily.
+
+
+If we want to  presernve the sequence of Set then we should use LinkedHashSet class instead of HashSet class.
+
+LinkedHashSet is the child class of HashSet class.
+
+
+Demo.java:
+---------------
+package com.masai;
+
+import java.util.LinkedHashSet;
+
+public class Demo {
+	
+
+	public static String removeDuplicateFromString(String original) {
+		
+		StringBuilder sb=new StringBuilder("");
+		
+		char[] chr= original.toCharArray();
+		
+		LinkedHashSet<Character> lhs = new LinkedHashSet<>();
+		
+		for(char ch:chr) {
+			lhs.add(ch);
+a		}
+		
+		for(char c:lhs) {
+			
+			sb.append(c);
+		}
+		
+		
+		return sb.toString();
+		
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		
+	
+		String result= removeDuplicateFromString("Ratttaaannn");
+		
+		System.out.println(result);
+				
+	}
+
+}
+
+
+
+String class also override equals() method from Object class to compare the content of the String.
+
+
+
+overriding equals method inside Student class:
+=====================================
+	@Override
+	public boolean equals(Object obj) {
+	
+		Student s1= this;
+		
+		Student s2= (Student)obj;
+
+		return s1.getRoll() == s2.getRoll() 
+				&& s1.getName().equals(s2.getName()) 
+				&& s1.getMarks() == s2.getMarks();
+			
+		
+		
+		
+	}
+	
+
+
+
+Note: internally HashSet class uses equals and hashCode method to identify/verify the duplicate object.
+
+--to make an object equal logically we need to override hashCode and equals method of the Object class.
+
+--internally HS class add method call equals() method on 2 object and if it returns true then it will call hashCode method, and if both obj hashCode method returns the same value then add method of the HashSet class recognize that duplicate object.
+
+
+example:
+
+	@Override
+	public int hashCode() {
+	
+		//return roll;
+		return Objects.hash(roll,name,marks);
+	
+	}
+	
+
+
+

@@ -1,0 +1,577 @@
+try 
+catch
+throw
+throws
+finally
+
+throw keyword:
+============
+
+--with throw keyword we can generate the exception class object in our program explicitly.
+
+--generally jvm will create the exception class object, whenever logical error occurs in our application. and put/throw that exception obj inside our application.
+ 
+--but sometime, it is required that programmer need to create the exception class object explicitly and throw that inside the application manually. whenever logical error occurs due to the business logic violation.
+
+--this business logic violation error related logical error, is not a logical error to the point of view of jvm.
+
+
+	public int getPension(int age, int salary) {
+		
+		int pension = 0;
+		
+		
+		if(age > 40 && age < 100)
+			pension = (age * salary)/100;
+		else {
+		
+			ArithmeticException ae = new ArithmeticException("Invalid Age");
+			throw ae;
+		// this exception is generated based on logic error due to our business logic
+			
+		}
+		
+		
+		return pension;
+	}
+
+
+
+
+
+throws keyword:
+==============
+
+--this keyword is used along with method signature to announce the caller that the method might throw an exception class object at calling place.
+
+
+example:
+
+Demo.java:
+---------------
+
+package com.masai;
+
+public class Demo {
+	
+	//x
+	public int getPension(int age, int salary)throws ArithmeticException {
+		
+		System.out.println("start of getPension..");
+		
+		int pension = 0;
+		
+		
+		if(age > 40 && age < 100)
+			pension = (age * salary)/100;
+		else {
+		
+			ArithmeticException ae = new ArithmeticException("Invalid Age");
+			throw ae;
+			
+		}
+		
+		
+		System.out.println("end of getPension..");
+		
+		return pension;
+		
+		
+	}
+	
+	
+	
+	
+	
+
+	public static void main(String[] args) {//-
+
+		System.out.println("Start of main...");
+		
+
+		
+		Demo d1= new Demo();
+		
+		
+		try {
+		
+			int pen= d1.getPension(10, 8000);//-
+		
+			System.out.println("Total pension is :"+pen);
+		
+		
+		}catch (ArithmeticException  ae) {
+			System.out.println(ae.getMessage());
+			
+		}
+		
+		//10000
+			
+		System.out.println("End of main...");
+	}
+
+}
+
+
+Rule1: 
+
+--if we are throwing any unchecked exception class object from a method then announcing that exception with method signature is optional. otherwise(if we throw any checked exception class object) then it is mandatory.
+
+Rule2: if a method throws any checked exeption then caller have 2 choices at compile time.
+
+1.caller need to wrap the method call inside the try-catch block (handle the exception) 
+2.caller can delegate the exception handling duty to its own caller by using "throws" keyword (skipping the exception handling duty)
+
+
+***Note: we only handle the exception using try-catch block, using throws keyword we just skip the exception handling duty and delegate it to the caller.
+
+--we can apply the throws keyword with the main method also, but in realtime application it is never recomended to use throws along with main method. becoz by doing so, we are ready to accept abnormal termination.
+
+
+Demo.java:
+=========
+
+package com.masai;
+
+public class Demo {
+	
+	
+	public int getPension(int age, int salary) throws ClassNotFoundException {
+		
+		System.out.println("start of getPension..");
+		
+		int pension = 0;
+		
+		
+		if(age > 40 && age < 100)
+			pension = (age * salary)/100;
+		else {
+		
+			//write some alternate logic
+			//System.out.println("invalid age...");
+			//but method author  delegate the exception handling duty to the caller
+			//by throwing an exception
+			
+			//ArithmeticException ae = new ArithmeticException("Invalid Age");
+			ClassNotFoundException cfe = new ClassNotFoundException("invalid age");
+			throw cfe;
+			
+		}
+		
+		
+		System.out.println("end of getPension..");
+		
+		return pension;
+		
+		
+	}
+	
+	
+	
+	
+	
+
+	public static void main(String[] args) throws ClassNotFoundException {
+
+		System.out.println("Start of main...");
+		
+
+		
+			Demo d1= new Demo();
+		
+		
+			
+			int pen = d1.getPension(10, 8000);//
+				
+			System.out.println("Total pension is :"+pen);
+			
+			
+		
+		//10000
+		
+		
+		System.out.println("End of main...");
+	}
+
+}
+
+
+Note: whenever we want to make exception handling duty mandatory to the caller then throw the checked exception class object otherwise (if we make exception handling duty to caller is optional) then throw the uncheked exception.
+
+
+User-defined exception:
+===================
+
+--if we want we can create out own user-defined exception classes as well.
+
+InvalidAgeException.java:
+--------------------------------
+
+package com.masai;
+
+//checked exception
+public class InvlidAgeException extends Exception{
+	
+	
+
+	public InvlidAgeException(String message) {
+		super(message);
+	}
+	
+	
+	public InvlidAgeException() {
+	}
+	
+	
+
+}
+
+Demo.java:
+---------------
+
+package com.masai;
+
+public class Demo {
+	
+	//x
+	public int getPension(int age, int salary) throws InvalidAgeException{
+		
+		System.out.println("start of getPension..");
+		
+		int pension = 0;
+		
+		
+		if(age > 40 && age < 100)
+			pension = (age * salary)/100;
+		else {
+		
+			//write some alternate logic
+			//System.out.println("invalid age...");
+			//but method author delegate the exception handling duty to the caller
+			//by throwing an exception
+			
+			InvalidAgeException ie = new InvalidAgeException("Invalid Age:...");
+			//ArithmeticException ae = new ArithmeticException("Invalid Age");
+			//ClassNotFoundException cfe = new ClassNotFoundException("invalid age");
+			throw ie;
+			
+		}
+		
+		
+		System.out.println("end of getPension..");
+		
+		return pension;
+		
+		
+	}
+	
+	
+	
+	
+	
+
+	public static void main(String[] args)  {
+
+		System.out.println("Start of main...");
+		
+
+		
+			Demo d1= new Demo();
+		
+		
+			
+				
+					try {
+					int pen = d1.getPension(10, 8000);
+					
+					System.out.println("Total pension is :"+pen);
+					}catch(InvalidAgeException ie) {
+						System.out.println(ie.getMessage());
+					}
+				
+			
+			
+		
+		//10000
+		
+	
+		
+		System.out.println("End of main...");
+	}
+
+}
+
+
+
+
+Nested try block example:
+======================
+
+package com.masai;
+
+public class Demo {
+		
+
+	public static void main(String[] args)  {
+
+		System.out.println("Start of main...");
+		
+
+	
+		try {
+			
+			System.out.println("Inside try 1");
+			
+			
+			System.out.println(100/10);
+			
+			
+			try {
+				
+				System.out.println("inside try2");
+				
+				
+				A a1 = null;
+				
+				a1.funA();
+				
+				System.out.println("end of try2..");
+				
+			} catch (NullPointerException npe) {
+				
+				System.out.println("catch of try2");
+			}
+			
+			
+			
+			
+			
+			System.out.println("end of try1");
+			
+		} catch (Exception e) {
+			System.out.println("catch of try1");
+		}
+		
+		
+			
+		System.out.println("End of main...");
+	}
+
+}
+
+output:-
+
+Start of main...
+Inside try 1
+10
+inside try2
+catch of try2
+end of try1
+End of main...
+
+
+throws in constructor:
+==================
+
+package com.masai;
+
+public class Demo {
+		
+	
+	public Demo()throws InvalidAgeException {
+	
+
+		System.out.println("inside constructor of Demo");
+		
+	}
+	
+	
+	
+	
+	
+	
+
+	public static void main(String[] args)  {
+
+		System.out.println("Start of main...");
+		
+
+	
+		try {
+			Demo d1 = new Demo();
+		} catch (InvalidAgeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	
+		
+		System.out.println("End of main...");
+	}
+
+}
+
+
+throws with inheritance:
+====================
+
+A.java:
+----------
+
+package com.masai;
+
+public class A {
+	
+	int i =10;
+	
+	
+	public A()throws InvalidAgeException {
+		System.out.println("inside constructor of A");
+	}
+	
+	void funA() {
+		System.out.println("inside funA of A");
+	}
+
+}
+
+
+
+Demo.java:
+--------------
+
+package com.masai;
+
+public class Demo extends A{
+		
+	public Demo() throws InvalidAgeException  {
+		super();
+	}
+	
+	
+	
+
+	public static void main(String[] args)  {
+
+		System.out.println("Start of main...");
+		
+		try {
+			Demo d1 = new Demo();
+		} catch (InvalidAgeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		System.out.println("End of main...");
+	}
+
+}
+
+finally:
+======
+
+---irrespective of try and catch if we want to execute some code then we can use finally block.
+
+--it is block used with try and catch block.
+
+
+package com.masai;
+
+public class Demo {
+		
+	
+	
+
+	public static void main(String[] args)  {
+
+		System.out.println("Start of main...");
+		
+		//connection from DB // it is one type resource
+		///Connection conn = //---
+		
+		try {
+			//perform DB operation
+			System.out.println("inside try");
+			
+			System.out.println(100/0);
+			
+			
+			
+			System.out.println("end of try");
+			
+		} catch (ArithmeticException e) {
+			
+			
+			System.out.println("inside catch..");
+		}
+		
+		
+		
+		
+		//close the conn;  // by doing this we violate 2 coding priniciple: 1. coding modularity, 2. 		//coding integrity
+		
+		
+		System.out.println("End of main...");
+	}
+
+}
+
+Exception rethrowing:
+===================
+
+converting ArithmaticException to the InvalidAgeException
+
+
+Demo.java:
+--------------
+
+package com.masai;
+
+
+public class Demo {
+		
+	
+	
+	
+	public void fun1(int num1,int num2)throws InvalidAgeException {
+
+		try {
+		int result = num1/num2;
+		
+		System.out.println("Result is :"+result);
+		
+		}catch (ArithmeticException ae) {
+			System.out.println(ae.getMessage());
+			
+			InvalidAgeException iae= new InvalidAgeException("Num2 is zero");
+			
+			throw iae;
+		}
+		
+	}
+	
+	
+	
+
+	public static void main(String[] args)  {
+
+		System.out.println("Start of main...");
+		
+		
+		Demo d1 = new Demo();
+		
+		try {
+			d1.fun1(10, 0);
+		} catch (InvalidAgeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+			
+		System.out.println("End of main...");
+	}
+
+}
+
+
