@@ -7,7 +7,7 @@ public class StudentImpl implements Comparator<Student> {
     public int compare(Student o1, Student o2) {
         if (o1.getMarks() > o2.getMarks())
             return +1;
-        else if(o1.getMarks() < o1.getMarks())
+        else if(o1.getMarks() < o2.getMarks())
             return -1;
         else
             return 0;

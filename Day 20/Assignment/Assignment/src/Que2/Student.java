@@ -1,12 +1,14 @@
 package Que2;
 
-public class Student {
+
+import java.util.Comparator;
+// WITH CLASS COMPARABLE OVERRIDE COMPARE METHOD
+public class Student  {
     private int roll;
     private String name;
     private int marks;
 
     public Student(){
-
     }
 
     public Student(int roll, String name, int marks) {
