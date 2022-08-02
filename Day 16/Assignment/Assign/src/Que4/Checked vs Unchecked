@@ -1,0 +1,13 @@
+Checked Exception
+1. All exceptions in Exception class excluding Runtime class throws checked exception.
+2. Compiler force the users to handle the checked exceptions.
+3. Example of checked exception - SQLException, ClassNotFound Exception etc.
+4. To create user-defined checked exception, extend Exception class.
+5. Throws keyword is mandatory while defining a func.
+
+Unchecked Exception.
+1. All exceptions in Runtime Class are unchecked exception.
+2. Compiler does not forces users to handle Unchecked exception.
+3. Example of unchecked exception - ArithmeticException, NullPointerException etc.
+4. To create user-defined unchecked exception, extend Runtime class.
+5. Throws keyword is not mandatory while defining a func.
